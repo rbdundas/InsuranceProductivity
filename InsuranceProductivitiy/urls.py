@@ -24,4 +24,7 @@ urlpatterns = [
     path('core/', include('core.urls')),
     path('', core_views.index, name='index'),
     path("home/", core_views.home, name='home'),
+    path("iftp/", include('iftp.urls')),
+    path("amsforms/", include('amsforms.urls')),
+    path("samba/", include('samba.urls')),
 ]

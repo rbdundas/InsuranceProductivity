@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    {% include 'header.html' %}
+    <main class="py-6">
+        <div class="container-fluid">
+            {% for email in emails %}
+                <div class="row">
+                    <div class="col">
+                        {{ email.id }}
+                    </div>
+                    <div class="col">
+                        {{ email.payload.headers }}
+                    </div>
+                    <div class="col">
+                        {{ email.payload.body }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

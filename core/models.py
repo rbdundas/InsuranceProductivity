@@ -23,6 +23,11 @@ class Account(models.Model):
         return self.Name
 
 
+class AccountTokens(models.Model):
+    Account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    Token = models.CharField(max_length=120)
+
+
 class AccountUser(models.Model):
     User = models.ForeignKey(User, on_delete=models.CASCADE)
     Account = models.ForeignKey(Account, on_delete=models.CASCADE, null=True, blank=True)
@@ -89,3 +94,29 @@ class EpicSDKConfiguration(models.Model):
 
     def __str__(self):
         return self.list_record
+
+
+class ClientType(models.Model):
+    Type = models.CharField(max_length=30, null=True, blank=True)
+    Category = models.CharField(max_length=30, null=True, blank=True)
+    Subcategory = models.CharField(max_length=30, null=True, blank=True)
+
+
+class IdentificationType(models.Model):
+    Type = models.CharField(max_length=30, null=True, blank=True)
+    Category = models.CharField(max_length=30, null=True, blank=True)
+
+
+class IdentificationNumber(models.Model):
+    Type = models.ForeignKey(IdentificationType, on_delete=models.CASCADE)
+    Number = models.CharField(max_length=30, null=True, blank=True)
+
+
+class Client(models.Model):
+    Account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    Type = models.ForeignKey(ClientType, on_delete=models.CASCADE)
+    Name = models.CharField(max_length=120)
+    IdentificationNumber = models.ForeignKey(IdentificationNumber, on_delete=models.CASCADE, null=True, blank=True)
+
+
+

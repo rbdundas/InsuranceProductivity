@@ -1,0 +1,45 @@
+{
+  "title": "Business Owners Section",
+  "formNumber": "160",
+  "version": "2016/09",
+  "form": {
+    "Agency Customer ID": "",
+    "Date": "",
+    "Agency Name": "",
+    "Carrier": "",
+    "NAIC Code": 100000,
+    "Policy Number": "",
+    "Effective Date": "",
+    "First Named Insured": "",
+    "Policy Type": "",
+    "Standard": false,
+    "Special": false,
+    "Premium": {
+      "line": [
+        {
+          "Type": "Liability",
+          "Amount": ""
+        },
+        {
+          "Type": "Property",
+          "Amount": ""
+        },
+        {
+          "Type": "",
+          "Amount": ""
+        }
+      ],
+      "Minimum Premium": "",
+      "Total Estimated Premium": ""
+    },
+    "Blanket Summary": {
+      "line": [
+        {
+          "Blanket Number": "",
+          "Amount": "",
+          "Type": ""
+        }
+      ]
+    }
+  }
+}

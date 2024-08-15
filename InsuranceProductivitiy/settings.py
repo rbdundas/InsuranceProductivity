@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-amb!!p==ynhw^$o8*e$$2kz^=2)cd!oef)#3_e5%_+q6or+j4_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
+    '76.125.63.83'
+]
 
 AUTH_USER_MODEL = "core.User"
 LOGIN_REDIRECT_URL = "/home"
@@ -40,11 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'django_bootstrap5',
     'localflavor',
     'core',
-    'activity',
-    'webform'
+    'iftp',
+    'amsforms',
+    'acord',
+    'billing',
+    'samba'
 ]
 
 MIDDLEWARE = [
@@ -62,8 +70,7 @@ ROOT_URLCONF = 'InsuranceProductivitiy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'localhost',
         'PORT': '5432',
-        'NAME': 'InsuranceProductivity',
+        'NAME': 'insuranceproductivity',
         'USER': 'postgres',
         'PASSWORD': '#S3pt3mb3r2002?'
     }
@@ -127,10 +134,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SAMBA_SAFETY_CLIENT_ID = '0oa1839wlljBSOFRW358'
+SAMBA_SAFETY_CLIENT_SECRET = 'FMmFMvpogGzLaOUiwWWLjUmVB_e8sg4qEQE03-IvVt0o0fdHVoLzH7XKAs11GYop'
+SAMBA_SAFETY_API_KEY = 'lurokt9d9380kvt8hChmw4LaorlPriwL6h41CcAm'
+SAMBA_SAFETY_URL = 'https://api-demo.sambasafety.io'
