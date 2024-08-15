@@ -1,0 +1,16 @@
+{% load static %}
+{% block content %}
+    <header>
+        <div class="container-fluid">
+            <div class="border-bottom pt-6">
+                <div class="row align-items-center">
+                    <div class="col-sm col-12">
+                        <h1 class="h2 ls-tight">
+                            Hi, {{ user.first_name }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
