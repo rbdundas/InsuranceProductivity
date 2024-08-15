@@ -1,3 +1,4 @@
 .idea
 .venv
 iftp/gmail_iftp_connection.json
+cloud/gcloud_credentials.json
